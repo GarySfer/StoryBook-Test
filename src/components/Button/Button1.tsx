@@ -1,8 +1,10 @@
 import React from 'react';
-import { cva, VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+import { Button1Props } from './Button1.types';
+
 
 // Definicja stylów dla przycisku za pomocą cva
-const buttonStyles = cva(
+export const buttonStyles = cva(
   'inline-flex items-center justify-center font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2', // bazowe style
   {
     variants: {
@@ -39,12 +41,6 @@ const buttonStyles = cva(
     },
   }
 );
-
-export interface Button1Props
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonStyles> {
-  label: string;
-}
 
 export const Button1: React.FC<Button1Props> = ({ label, variant, size, className, ...props }) => {
   return (
