@@ -1,6 +1,6 @@
 import React from 'react';
 import { cva } from 'class-variance-authority';
-import { Button1Props } from './Button1.types';
+import { ButtonProps } from './Button.types';
 
 
 // Definicja stylów dla przycisku za pomocą cva
@@ -42,7 +42,7 @@ export const buttonStyles = cva(
   }
 );
 
-export const Button1: React.FC<Button1Props> = ({ label, variant, size, className, ...props }) => {
+export const Button: React.FC<ButtonProps> = ({ label, variant, size, className, ...props }) => {
   return (
     <button className={`${buttonStyles({ variant, size })} ${className || ''}`} {...props}>
       {label}
